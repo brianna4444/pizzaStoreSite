@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Store</title>
+    <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+
+<h1>Pizza Store</h1>
+<div class="container-fluid" id="nav">
+    <div class="row">
+    <button id="pizzaBtn" class="col-2">Pizza</button>
+    <button id="cakeBtn" class="col-2">Cake</button>
+    <button id="drinkBtn" class="col-2">Drinks</button>
+    <input class="col-4">
+    <button><i class="col-2 fa fa search"></i></button>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid">
+
+    <div class="row">
+    <div class="col-8 container-fluid" id="resultBoxes">
+
+        <div class="row">
+            <div class="col-2" id="itemBox"></div>
+            <div class="col-2" id="itemBox"></div>
+            <div class="col-2" id="itemBox"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2" id="itemBox"></div>
+            <div class="col-2" id="itemBox"></div>
+            <div class="col-2" id="itemBox"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2" id="itemBox"></div>
+            <div class="col-2" id="itemBox"></div>
+            <div class="col-2" id="itemBox"></div>
+        </div>
+
+        <div class="col-12" id="pageSelector">
+            <p><h ref="#">1</h></p>|
+            <p><h ref="#">2</h></p>|
+            <p><h ref="#">3</h></p>|
+            <p><h ref="#">4</h></p>|
+            <p><h ref="#">5</h></p>|
+        </div>
+    </div>
+
+
+    <div class="col-4">
+        <div class="row">
+            <p class="col-12>"></p>
+            <div class="col-12" id="cartRows"></div>
+            <p class="col-12" id="totalAmount"></p>
+            <div class="col-12 row">
+                <button id="clearBtn">Clear</button>
+                <button id="orderBtn">Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script src="client.js"></script>
+<script src="server.js"></script>
+</html>
