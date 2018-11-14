@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <title>Pizza Store</title>
     <link rel="stylesheet" href="./css.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
 
 <h1>Pizza Store</h1>
 <div class="container-fluid" id="nav">
     <div class="row">
-    <button id="pizzaBtn" class="col-2">Pizza</button>
-    <button id="cakeBtn" class="col-2">Cake</button>
-    <button id="drinkBtn" class="col-2">Drinks</button>
+    <button id="pizzaBtn" class="col-2" onclick="showList('pizza')">Pizza</button>
+    <button id="cakeBtn" class="col-2" onclick="showList('cakes')">Cake</button>
+    <button id="drinkBtn" class="col-2" onclick="showList('drinks')">Drinks</button>
     <input class="col-4">
-    <button><i class="col-2 fa fa search"></i></button>
+    <button><i class="col-2 fa fa-search"></i></button>
+    <select>
+            <option value="pizza">pizza</option>
+            <option value="cakes">cakes</option>
+            <option value="drinks">drinks</option>
+
+        </select>
     </div>
 </div>
 </div>
@@ -22,33 +29,15 @@
 <div class="container-fluid">
 
     <div class="row">
-    <div class="col-8 container-fluid" id="resultBoxes">
+        <div class="col-8 container-fluid" id="resultBoxes">
 
-        <div class="row">
-            <div class="col-2" id="itemBox"></div>
-            <div class="col-2" id="itemBox"></div>
-            <div class="col-2" id="itemBox"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-2" id="itemBox"></div>
-            <div class="col-2" id="itemBox"></div>
-            <div class="col-2" id="itemBox"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-2" id="itemBox"></div>
-            <div class="col-2" id="itemBox"></div>
-            <div class="col-2" id="itemBox"></div>
-        </div>
-
-        <div class="col-12" id="pageSelector">
-            <p><h ref="#">1</h></p>|
-            <p><h ref="#">2</h></p>|
-            <p><h ref="#">3</h></p>|
-            <p><h ref="#">4</h></p>|
-            <p><h ref="#">5</h></p>|
-        </div>
+             <div class="col-12" id="pageSelector">
+                <p><h ref="#">1</h></p>|
+                <p><h ref="#">2</h></p>|
+                <p><h ref="#">3</h></p>|
+                <p><h ref="#">4</h></p>|
+                <p><h ref="#">5</h></p>|
+            </div>
     </div>
 
 

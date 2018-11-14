@@ -29,16 +29,32 @@ mongo.connect("mongodb://localhost:27017", function (err, client) {
 
 
     app.get('/search', function (req, res) {
+        let category= req.query.category;
         let item = req.query.item;
-        db.find(item).toArray(function (err, result) {
+        let obj={
+            name: item
+        }
+        let coll= db.collection(category);
+        coll.find(obj).toArray(function (err, result) {
             res.send(result);
         });
 
     });
 
-    app.get('/order'), function (req, res) {
-        inserts
-    }
+    app.get('/order', function (req, res) {
+        let coll= db.collection("orderHistory");
+        let item= req.query.items;
+        let time= req.query.time;
+        let total= req.query.total;
+        let obj= {
+            items: item,
+            total: total,
+            time: time,
+
+        }
+        coll.insert(obj);
+        res.send("Order Received!");
+    })
 
 })
 
