@@ -1,0 +1,35 @@
+.name{
+    font-size: 1.8em;
+    ;
+}
+
+.name,.price,.description{
+    text-align: center;
+}
+
+.more{
+    float: left;
+}
+
+.add{
+    float: right;
+}
+
+#pageSelector{
+    text-align: center;
+}
+
+.box{
+    float: left;
+}
+
+.list{
+    float: left;
+}
+
+
+
+.info{
+    border: black 1px solid;
+
+}

@@ -4,6 +4,9 @@ let port = 3000;
 let fs = require('fs');
 let mongo = require("mongodb").MongoClient;
 let mongodb = require("mongodb");
+let cors= require("cors");
+
+app.use(cors());
 
 
 app.listen(port, function () {
@@ -44,12 +47,17 @@ mongo.connect("mongodb://localhost:27017", function (err, client) {
     app.get('/order', function (req, res) {
         let coll= db.collection("orderHistory");
         let item= req.query.items;
-        let time= req.query.time;
         let total= req.query.total;
+        let name= req.query.name;
+        let number= req.query.number;
+        let address= req.query.address;
         let obj= {
+            name: name,
+            number: number,
+            address: address,
             items: item,
             total: total,
-            time: time,
+            time: + Date.now(),
 
         }
         coll.insert(obj);
