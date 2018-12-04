@@ -1,3 +1,58 @@
+
+.container-fluid{
+    min-height: 100vh;
+    height: 100%;
+    font-family: "Apple Braille";
+}
+
+
+body{
+    height: 100vh;
+
+
+}
+
+#mainContainer{
+
+    background-color: lightyellow;
+    padding: 2%;
+
+    height: 100%;
+
+
+
+}
+
+#slogan{
+    color: tan;
+}
+
+#pizzaBtn, #dessertBtn, #drinkBtn{
+    background-color: tan;
+    color: white;
+    border-color: tan;
+    border-radius: 0px;
+}
+
+#cart{
+
+    height: 100%;
+    background-color: white;
+}
+
+#ls{
+    overflow: auto;
+
+}
+
+
+
+
+
+
+
+
+
 .name{
     font-size: 1.8em;
     ;

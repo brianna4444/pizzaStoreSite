@@ -1,3 +1,6 @@
+
+
+
 showList("pizza");
 
 function searchPizza(){
@@ -22,61 +25,66 @@ let category= $('#selector').val();
 
 function show(data){
 
-    let listDiv= $("#resultBoxes");
+    let listDiv= $("#thumbnailSection");
     listDiv.empty();
     console.log(data);
     listDiv.className="list";
     for (let i=0; i<data.length; i++){
         let boxDiv= document.createElement("div");
 
+        boxDiv.style.backgroundColor="white";
         boxDiv.style.border="1px solid";
         boxDiv.style.padding="1%";
         boxDiv.style.width="30%";
         boxDiv.className="box";
 
-
+        let topRow= document.createElement("div");
+        topRow.className="row";
         let nameDiv= document.createElement("div");
         let name= data[i].name;
         nameDiv.append(name);
-        nameDiv.className="name";
+        nameDiv.className="name col-12 text-center";
         nameDiv.style.width="100px";
         nameDiv.style.display="inline-block";
         let priceDiv= document.createElement("div");
         let price= data[i].price;
         priceDiv.append("$");
         priceDiv.append(price);
-        priceDiv.className="price";
+        priceDiv.className="price col-12 text-center";
         priceDiv.style.width="100px";
         priceDiv.style.display="inline-block";
         let descDiv= document.createElement("div");
         let desc= data[i].description;
-        descDiv.className="description";
+        descDiv.className="description col-12 text-center ";
         descDiv.append(desc);
         descDiv.style.width="100px";
         descDiv.style.display="inline-block";
+
+        let bottomRow= document.createElement("div");
+        bottomRow.className="row justify-content-center";
         let moreBtn= document.createElement("button");
-        moreBtn.className="more";
         moreBtn.id=data[i]._id;
-        moreBtn.className="btn btn-info btn-sm";
-        //$("#myModal").modal('toggle');
-        $(".btn-info").attr=("data-toggle", "modal");
-        $(".btn-info").attr=("data-target", "#myModal");
+        moreBtn.className="more col-4  btn btn-outline-secondary";
         moreBtn.style.margin="1%";
         moreBtn.append("more");
-        moreBtn.style.backgroundColor="purple";
+
         let addBtn= document.createElement("button");
-        addBtn.className="add";
+        addBtn.className="add col-4  btn btn-outline-success";
         addBtn.id= data[i]._id;
         addBtn.style.margin="1%";
         addBtn.append("add");
         addBtn.onclick= function() { addCart(data[i]._id, name, price); };
-        addBtn.style.backgroundColor="red";
+
+
         listDiv.append(boxDiv);
-        boxDiv.append(nameDiv);
-        boxDiv.append(descDiv);
-        boxDiv.append(priceDiv);
-        boxDiv.append(moreBtn);
-        boxDiv.append(addBtn);
+        boxDiv.append(topRow);
+        boxDiv.append(bottomRow);
+        topRow.append(nameDiv);
+        topRow.append(descDiv);
+        topRow.append(priceDiv);
+
+        bottomRow.append(moreBtn);
+        bottomRow.append(addBtn);
 
 
     }
@@ -107,23 +115,25 @@ $.ajax({
 
 let counter= 0;
 function addCart(id, name, price){
-
-    let div= $('#cartRows');
-    div.className="container-fluid row";
-    let infoDiv= document.createElement("div");
     counter++;
-    infoDiv.id=counter;
-    infoDiv.className="col-12";
-    infoDiv.append(name);
-    infoDiv.append(price);
-    infoDiv.className="info";
-    let removeBtn= document.createElement("button");
-    removeBtn.className="fa fa-minus-circle";
-    removeBtn.onclick= function() { removeItem(infoDiv.id,price); };
-    infoDiv.style.width="100px";
-    infoDiv.style.display="inline-block";
-    infoDiv.append(removeBtn);
-    div.append(infoDiv);
+    let list = $("#ls");
+
+
+
+    let spanDelete = document.createElement("span");
+    spanDelete.className = "badge badge-pill badge-danger float-right";
+    spanDelete.onclick= function () { removeItem(li.id,price)};
+    spanDelete.innerHTML = "-";
+
+    let li = document.createElement("li");
+    li.className="col-12 list-group-item";
+    li.innerHTML = name + price;
+
+    li.id=counter;
+
+
+    li.appendChild(spanDelete);
+    list.append(li);
 
     cartTotal(price);
 }
@@ -133,7 +143,7 @@ function cartTotal(price){
 
     currentPrice= currentPrice + price;
     $('#totalAmount').empty();
-    $('#totalAmount').append(currentPrice);
+    $('#totalAmount').append("Total: $ " + currentPrice);
 
 }
 
@@ -144,18 +154,21 @@ function choosePage(){}
 
 
 function removeItem(id, price){
-    let box= $('#' + id);
-    let listDiv= $("#resultBoxes");
+    let item= "#" + id;
+    $(item).remove();
+
 
     currentPrice= currentPrice - price;
     $('#totalAmount').empty();
-    $('#totalAmount').append(currentPrice);
+    $('#totalAmount').append("Total: $ " + currentPrice);
 
-    box.remove();
+
 }
 
 function clearCart() {
-$('#cartRows').empty();
+$('#ls').empty();
+    $('#totalAmount').empty();
+$('#totalAmount').append("Total: $0");
 }
 
 
@@ -184,7 +197,9 @@ function order(){
         },
 
     });
-}
+};
+
+
 
 
 
