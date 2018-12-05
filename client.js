@@ -29,10 +29,18 @@ function show(data){
     listDiv.empty();
     console.log(data);
     listDiv.className="list";
-    for (let i=0; i<data.length; i++){
+
+    /*for (let i=0; i<6; i++){
+        showThumbnails()
+    }
+    for (let i=7; i<12; i++){
+        showThumbnails()
+    }
+*/
+    for (let i=0; i<6; i++){
         let boxDiv= document.createElement("div");
 
-        boxDiv.style.backgroundColor="white";
+        boxDiv.style.backgroundColor="tan";
         boxDiv.style.border="1px solid";
         boxDiv.style.padding="1%";
         boxDiv.style.width="30%";
@@ -127,7 +135,7 @@ function addCart(id, name, price){
 
     let li = document.createElement("li");
     li.className="col-12 list-group-item";
-    li.innerHTML = name + price;
+    li.innerHTML = name + " " + "$"+price;
 
     li.id=counter;
 

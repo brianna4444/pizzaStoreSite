@@ -34,6 +34,10 @@ body{
     border-radius: 0px;
 }
 
+#thumbnailSection{
+    overflow: visible;
+}
+
 #cart{
 
     height: 100%;
