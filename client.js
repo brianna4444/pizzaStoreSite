@@ -30,13 +30,6 @@ function show(data){
     console.log(data);
     listDiv.className="list";
 
-    /*for (let i=0; i<6; i++){
-        showThumbnails()
-    }
-    for (let i=7; i<12; i++){
-        showThumbnails()
-    }
-*/
     for (let i=0; i<6; i++){
         let boxDiv= document.createElement("div");
 
@@ -75,6 +68,7 @@ function show(data){
         moreBtn.className="more col-4  btn btn-outline-secondary";
         moreBtn.style.margin="1%";
         moreBtn.append("more");
+        moreBtn.onclick= function () { showModal(data[i].description);};
 
         let addBtn= document.createElement("button");
         addBtn.className="add col-4  btn btn-outline-success";
@@ -155,7 +149,14 @@ function cartTotal(price){
 
 }
 
-function details(){}
+function showModal(info){
+    $('#modal').css("display", "block");
+    $('#modalContent').append(info);
+}
+
+function hideModal(){
+    $("#modal").css("display", "none");
+}
 
 
 function choosePage(){}

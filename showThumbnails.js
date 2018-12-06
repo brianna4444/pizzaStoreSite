@@ -38,6 +38,7 @@ function showThumbnails() {
         moreBtn.className = "more col-4  btn btn-outline-secondary";
         moreBtn.style.margin = "1%";
         moreBtn.append("more");
+        moreBtn.onclick= function () { showModal(data[i].description)};
 
         let addBtn = document.createElement("button");
         addBtn.className = "add col-4  btn btn-outline-success";
