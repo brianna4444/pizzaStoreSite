@@ -25,7 +25,10 @@ mongo.connect("mongodb://localhost:27017", function (err, client) {
     app.get('/list', function (req, res) {
         let collName = req.query.collection;
         let coll = db.collection(collName);
-        coll.find({}).toArray(function (err, result) {
+        let pageNumber = req.query.page;
+        let limit = 6;
+        let skip = (pageNumber-1) * 6;
+        coll.find({}).skip(skip).limit(limit).toArray(function (err, result) {
             res.send(result);
         })
     });
