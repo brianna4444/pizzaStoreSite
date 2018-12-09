@@ -1,4 +1,4 @@
-showList("pizza", 0);
+showList("pizza", 1);
 
 function searchPizza() {
     let item = $('#search').val();

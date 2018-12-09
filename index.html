@@ -10,35 +10,35 @@
 </head>
 <body>
 
-<div class="container-fluid"  id="mainContainer">
-<div class="row" id="topHeader" style="height: 25%">
-    <div class="col-3" style="width: 100%" >
-        <img height="100%" width="100%" src="images/logo.png">
-    </div>
-    <div class="col-9" >
-        <div class="row" style="height: 75%">
-            <div class="row col-12" style="height: 25%"></div>
-            <div class=" row col-12 justify-content-center" style="height: 25%">Only Organic,</div>
-            <div class="row col-12  justify-content-center " style="height: 25%">All the time</div>
-            <div class="row col-12" style="height: 25%"></div>
+<div class="container-fluid" id="mainContainer">
+    <div class="row" id="topHeader" style="height: 25%">
+        <div class="col-3" style="width: 100%">
+            <img height="100%" width="100%" src="images/logo.png">
+        </div>
+        <div class="col-9">
+            <div class="row" style="height: 75%">
+                <div class="row col-12" style="height: 25%"></div>
+                <div class=" row col-12 justify-content-center" style="height: 25%">Only Organic,</div>
+                <div class="row col-12  justify-content-center " style="height: 25%">All the time</div>
+                <div class="row col-12" style="height: 25%"></div>
 
-        </div>
-        <div class="row" style="height: 25%" id="nav">
-            <div class="col-4 btn btn-info" id="pizzaBtn" onclick="showList('pizza')">Pizza</div>
-            <div class="col-4 btn btn-info" id="dessertBtn" onclick="showList('cakes')">Desserts</div>
-            <div class="col-4 btn btn-info" id="drinkBtn" onclick="showList('drinks')">Drinks</div>
+            </div>
+            <div class="row" style="height: 25%" id="nav">
+                <div class="col-4 btn btn-info" id="pizzaBtn" onclick="showList('pizza')">Pizza</div>
+                <div class="col-4 btn btn-info" id="dessertBtn" onclick="showList('cakes')">Desserts</div>
+                <div class="col-4 btn btn-info" id="drinkBtn" onclick="showList('drinks')">Drinks</div>
+            </div>
         </div>
     </div>
-</div>
 
     <div class="row" style="height: 5%"></div>
 
 
-<div class="row" style="height: 5%">
-    <div class="col-7"></div>
-    <div class="col-5 row" id="searchRow">
+    <div class="row" style="height: 5%">
+        <div class="col-7"></div>
+        <div class="col-5 row" id="searchRow">
 
-            <input  id="search" class="col-7">
+            <input id="search" class="col-7">
             <div class="btn col-1" onclick="searchPizza()"><i class="fa fa-search"></i></div>
             <select class="col-4" id="selector">
                 <option value="pizza">pizza</option>
@@ -56,49 +56,45 @@
 
         <div id="modal">
             <span id="close" onclick="hideModal()">x</span>
-            <div id="modelContent"></div>
-            </div>
+            <div id="modalContent" class="modalWindow"></div>
+        </div>
 
     </div>
-        <div class="col-4" id="cart" style="border: black solid 1px">
-            <div class="row" id="cartName" style="height: 10%">
-                <div class="col-12 text-center">Cart</div>
-            </div>
-            <div class="row" style="height: 10%"></div>
-            <div class="row"  style="height: 50%">
-                <ul class="col-md-12 group-item" id="ls"></ul>
+    <div class="col-4" id="cart" style="border: black solid 1px">
+        <div class="row" id="cartName" style="height: 10%">
+            <div class="col-12 text-center">Cart</div>
+        </div>
+        <div class="row" style="height: 10%"></div>
+        <div class="row" style="height: 50%">
+            <ul class="col-md-12 group-item" id="ls"></ul>
 
-            </div>
-            <div class="col-12"></div>
-            <div class="row" id="totalAmount">
-                <div class="col-12" style="height: 10%">Total: $0</div>
-            </div>
+        </div>
+        <div class="col-12"></div>
+        <div class="row" id="totalAmount">
+            <div class="col-12" style="height: 10%">Total: $0</div>
+        </div>
 
-            <div class="row" style="height: 5%"></div>
-            <div class="row" id="buttons" style="height: 10%">
-                <div class="col-12 row">
-                    <div class="col-2"></div>
-                    <button class="col-3 btn btn-outline-secondary" onclick="clearCart()">Clear</button>
-                    <div class="col-1"></div>
-                    <button class="col-4 btn btn-outline-success" onclick="order()">Checkout</button>
-                    <div class="col-2"></div>
-                </div>
+        <div class="row" style="height: 5%"></div>
+        <div class="row" id="buttons" style="height: 10%">
+            <div class="col-12 row">
+                <div class="col-2"></div>
+                <button class="col-3 btn btn-outline-secondary" onclick="clearCart()">Clear</button>
+                <div class="col-1"></div>
+                <button class="col-4 btn btn-outline-success" onclick="order()">Checkout</button>
+                <div class="col-2"></div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="row" style="height: 20%">
-        <div class="col-8" id="pageSelector">
+<div class="row" style="height: 20%">
+    <div class="col-8" id="pageSelector">
 
-        </div>
     </div>
-
-
 </div>
 
 
-
-
+</div>
 
 
 </div>
