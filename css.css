@@ -20,7 +20,6 @@ body{
 
     background-color: lightyellow;
     padding: 2%;
-
     height: 100%;
 
 
@@ -46,6 +45,7 @@ body{
 
     height: 100%;
     background-color: white;
+    padding: 3%;
 }
 
 #ls{
@@ -58,6 +58,7 @@ body{
     position: fixed;
     z-index: 1;
     padding-top: 100px;
+
     left: 0;
     top: 0;
     width: 100%;
@@ -70,12 +71,13 @@ body{
 
 #modalContent {
     margin: auto;
-    width: 80%;
+    width: 30%;
     max-width: 700px;
     height: 35%;
     max-height: 400px;
     border-radius: 5px;
     background-color: grey;
+    padding: 3%;
 }
 
 #close {
@@ -96,7 +98,26 @@ body{
     cursor: pointer;
 }
 
+.firstDiv{
+    color: white;
+    height: 75%;
+}
 
+.secondSpan{
+    height: 25%;
+}
+
+.firstSpan{
+    height: 25%;
+}
+
+.thirdSpan{
+    height: 25%;
+}
+
+.fouthSpan{
+    height: 25%;
+}
 
 
 

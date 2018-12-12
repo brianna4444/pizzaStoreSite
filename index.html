@@ -39,7 +39,7 @@
         <div class="col-5 row" id="searchRow">
 
             <input id="search" class="col-7">
-            <div class="btn col-1" onclick="searchPizza()"><i class="fa fa-search"></i></div>
+            <div class="btn col-1" onclick="search(1)"><i class="fa fa-search"></i></div>
             <select class="col-4" id="selector">
                 <option value="pizza">pizza</option>
                 <option value="cakes">cakes</option>
@@ -55,11 +55,13 @@
         <div class="col-8" id="thumbnailSection"></div>
 
         <div id="modal">
-            <span id="close" onclick="hideModal()">x</span>
+
             <div id="modalContent" class="modalWindow"></div>
         </div>
 
-    </div>
+
+
+
     <div class="col-4" id="cart" style="border: black solid 1px">
         <div class="row" id="cartName" style="height: 10%">
             <div class="col-12 text-center">Cart</div>
@@ -71,7 +73,7 @@
         </div>
         <div class="col-12"></div>
         <div class="row" id="totalAmount">
-            <div class="col-12" style="height: 10%">Total: $0</div>
+            <div class="col-12 total" style="height: 10%">Total: $0</div>
         </div>
 
         <div class="row" style="height: 5%"></div>
@@ -80,7 +82,7 @@
                 <div class="col-2"></div>
                 <button class="col-3 btn btn-outline-secondary" onclick="clearCart()">Clear</button>
                 <div class="col-1"></div>
-                <button class="col-4 btn btn-outline-success" onclick="order()">Checkout</button>
+                <button class="col-4 btn btn-outline-success" onclick="showOrderModal()">Checkout</button>
                 <div class="col-2"></div>
             </div>
         </div>
