@@ -34,7 +34,7 @@ mongo.connect("mongodb://localhost:27017", function (err, client) {
         let coll = db.collection(collName);
         let name= req.query.item;
         let obj={
-            name: name
+            name: new RegExp(name, 'ig')
         }
 
         coll.find(obj).count(function (err, result) {
@@ -60,7 +60,7 @@ mongo.connect("mongodb://localhost:27017", function (err, client) {
         let pageNumber = req.query.page;
         let name= req.query.item;
         let obj={
-            name: name
+            name: new RegExp(name, 'ig')
         }
         let limit = 6;
         let skip = (pageNumber-1) * 6;

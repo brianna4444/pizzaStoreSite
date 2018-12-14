@@ -311,7 +311,7 @@ function show(data, id) {
         liName.className= "col-6 item";
         liName.append(name);
         let liPrice= document.createElement("span");
-        liPrice.className="col-3";
+        liPrice.className="col-3 price";
         liPrice.append("$"+ price);
 
         li.id = counter;
@@ -456,6 +456,7 @@ function showOrderModal() {
     function clearCart() {
         $('#ls').empty();
         $('#totalAmount').empty();
+        currentPrice=0;
         $('#totalAmount').append("Total: $0");
     }
 
@@ -464,9 +465,20 @@ function showOrderModal() {
         let name = $('.input1').val();
         let number = $('.input2').val();
         let address = $('.input3').val();
-        let items = [];
-        items.push($('#ls').find('.item').text());
+        let arr = [];
 
+
+        $( "li" ).each(function() {
+            let item= $( this ).find('.item').text();
+            let price= $( this ).find('.price').text();
+            let itemList = {
+                "name": item,
+                "price": price
+            };
+            arr.push(itemList);
+
+    });
+        console.log(arr);
 
 
         let total = currentPrice;
@@ -477,7 +489,7 @@ function showOrderModal() {
                 'name': name,
                 'number': number,
                 'address': address,
-                'items': items,
+                'items': arr,
                 'total': total,
                 'time': new Date().getTime()
 
